@@ -1,0 +1,335 @@
+<div class="table__wrapper">
+  <div class="table__actions">
+    <div class="table__actions-row">
+      <div class="field-search">
+        <app-svg-icon
+          [size]="data.iconSize"
+          [type]="data.searchIcon"
+        ></app-svg-icon>
+        <input type="text" class="field-input search" placeholder="Search..." />
+      </div>
+    </div>
+  </div>
+  <div class="table">
+    <div class="table__head">
+      <div class="table__tr">
+        <div class="table__th">Name</div>
+        <div class="table__th">E-mail</div>
+        <div class="table__th">
+          <div class="filter">
+            <span>Role</span>
+            <app-button [buttonTyped]="data.btnTypeIcon">
+              <app-svg-icon
+                [size]="data.iconSize"
+                [type]="data.filterIcon"
+              ></app-svg-icon>
+            </app-button>
+          </div>
+        </div>
+        <div class="table__th">
+          <div class="filter">
+            <span>Status</span>
+            <app-button [buttonTyped]="data.btnTypeIcon">
+              <app-svg-icon
+                [size]="data.iconSize"
+                [type]="data.filterIcon"
+              ></app-svg-icon>
+            </app-button>
+          </div>
+        </div>
+        <div class="table__th">Details</div>
+      </div>
+    </div>
+    <div class="table__body">
+      <div class="table__tr">
+        <div class="table__td">
+          <div class="details">
+            <div class="online status">
+              <app-svg-icon
+                [size]="data.iconXsSizd"
+                [type]="data.onlineIcon"
+              ></app-svg-icon>
+            </div>
+            <span>Johnny Greame</span>
+          </div>
+        </div>
+        <div class="table__td">abc(at)xyz.com</div>
+        <div class="table__td">
+          <app-badge [badgeStyleColor]="data.badgeStyle">Admin</app-badge>
+        </div>
+        <div class="table__td">Active</div>
+        <div class="table__td">
+          <app-button [buttonTyped]="data.btnTypeIcon">
+            <app-svg-icon
+              [size]="data.iconSize"
+              [type]="data.threeDots"
+            ></app-svg-icon>
+          </app-button>
+        </div>
+      </div>
+      <div class="table__tr">
+        <div class="table__td">
+          <div class="details">
+            <div class="online status">
+              <app-svg-icon
+                [size]="data.iconXsSizd"
+                [type]="data.onlineIcon"
+              ></app-svg-icon>
+            </div>
+            <span>Johnny Greame</span>
+          </div>
+        </div>
+        <div class="table__td">abc(at)xyz.com</div>
+        <div class="table__td">
+          <app-badge [badgeStyleColor]="data.badgeStyle2">Owner</app-badge>
+        </div>
+        <div class="table__td">Active</div>
+        <div class="table__td">
+          <app-button [buttonTyped]="data.btnTypeIcon">
+            <app-svg-icon
+              [size]="data.iconSize"
+              [type]="data.threeDots"
+            ></app-svg-icon>
+          </app-button>
+        </div>
+      </div>
+      <div class="table__tr">
+        <div class="table__td">
+          <div class="details">
+            <div class="offline status">
+              <app-svg-icon
+                [size]="data.iconXsSizd"
+                [type]="data.offlineIcon"
+              ></app-svg-icon>
+            </div>
+            <span>Johnny Greame</span>
+          </div>
+        </div>
+        <div class="table__td">abc(at)xyz.com</div>
+        <div class="table__td">
+          <app-badge [badgeStyleColor]="data.badgeStyle3">Dev</app-badge>
+        </div>
+        <div class="table__td">Active</div>
+        <div class="table__td">
+          <app-button [buttonTyped]="data.btnTypeIcon">
+            <app-svg-icon
+              [size]="data.iconSize"
+              [type]="data.threeDots"
+            ></app-svg-icon>
+          </app-button>
+        </div>
+      </div>
+      <div class="table__tr">
+        <div class="table__td">
+          <div class="details">
+            <div class="offline status">
+              <app-svg-icon
+                [size]="data.iconXsSizd"
+                [type]="data.offlineIcon"
+              ></app-svg-icon>
+            </div>
+            <span>Johnny Greame</span>
+          </div>
+        </div>
+        <div class="table__td">abc(at)xyz.com</div>
+        <div class="table__td">
+          <app-badge [badgeStyleColor]="data.badgeStyle3">Dev</app-badge>
+        </div>
+        <div class="table__td">Active</div>
+        <div class="table__td">
+          <app-button [buttonTyped]="data.btnTypeIcon">
+            <app-svg-icon
+              [size]="data.iconSize"
+              [type]="data.threeDots"
+            ></app-svg-icon>
+          </app-button>
+        </div>
+      </div>
+      <div class="table__tr">
+        <div class="table__td">
+          <div class="details">
+            <div class="offline status">
+              <app-svg-icon
+                [size]="data.iconXsSizd"
+                [type]="data.offlineIcon"
+              ></app-svg-icon>
+            </div>
+            <span>Johnny Greame</span>
+          </div>
+        </div>
+        <div class="table__td">abc(at)xyz.com</div>
+        <div class="table__td">
+          <app-badge [badgeStyleColor]="data.badgeStyle3">Dev</app-badge>
+        </div>
+        <div class="table__td">Active</div>
+        <div class="table__td">
+          <app-button [buttonTyped]="data.btnTypeIcon">
+            <app-svg-icon
+              [size]="data.iconSize"
+              [type]="data.threeDots"
+            ></app-svg-icon>
+          </app-button>
+        </div>
+      </div>
+      <div class="table__tr">
+        <div class="table__td">
+          <div class="details">
+            <div class="offline status">
+              <app-svg-icon
+                [size]="data.iconXsSizd"
+                [type]="data.offlineIcon"
+              ></app-svg-icon>
+            </div>
+            <span>Johnny Greame</span>
+          </div>
+        </div>
+        <div class="table__td">abc(at)xyz.com</div>
+        <div class="table__td">
+          <app-badge [badgeStyleColor]="data.badgeStyle3">Dev</app-badge>
+        </div>
+        <div class="table__td">Active</div>
+        <div class="table__td">
+          <app-button [buttonTyped]="data.btnTypeIcon">
+            <app-svg-icon
+              [size]="data.iconSize"
+              [type]="data.threeDots"
+            ></app-svg-icon>
+          </app-button>
+        </div>
+      </div>
+      <div class="table__tr">
+        <div class="table__td">
+          <div class="details">
+            <div class="online status">
+              <app-svg-icon
+                [size]="data.iconXsSizd"
+                [type]="data.onlineIcon"
+              ></app-svg-icon>
+            </div>
+            <span>Johnny Greame</span>
+          </div>
+        </div>
+        <div class="table__td">abc(at)xyz.com</div>
+        <div class="table__td">
+          <app-badge [badgeStyleColor]="data.badgeStyle">Admin</app-badge>
+        </div>
+        <div class="table__td">Active</div>
+        <div class="table__td">
+          <app-button [buttonTyped]="data.btnTypeIcon">
+            <app-svg-icon
+              [size]="data.iconSize"
+              [type]="data.threeDots"
+            ></app-svg-icon>
+          </app-button>
+        </div>
+      </div>
+      <div class="table__tr">
+        <div class="table__td">
+          <div class="details">
+            <div class="offline status">
+              <app-svg-icon
+                [size]="data.iconXsSizd"
+                [type]="data.offlineIcon"
+              ></app-svg-icon>
+            </div>
+            <span>Johnny Greame</span>
+          </div>
+        </div>
+        <div class="table__td">abc(at)xyz.com</div>
+        <div class="table__td">
+          <app-badge [badgeStyleColor]="data.badgeStyle3">Dev</app-badge>
+        </div>
+        <div class="table__td">Active</div>
+        <div class="table__td">
+          <app-button [buttonTyped]="data.btnTypeIcon">
+            <app-svg-icon
+              [size]="data.iconSize"
+              [type]="data.threeDots"
+            ></app-svg-icon>
+          </app-button>
+        </div>
+      </div>
+      <div class="table__tr">
+        <div class="table__td">
+          <div class="details">
+            <div class="offline status">
+              <app-svg-icon
+                [size]="data.iconXsSizd"
+                [type]="data.offlineIcon"
+              ></app-svg-icon>
+            </div>
+            <span>Johnny Greame</span>
+          </div>
+        </div>
+        <div class="table__td">abc(at)xyz.com</div>
+        <div class="table__td">
+          <app-badge [badgeStyleColor]="data.badgeStyle3">Dev</app-badge>
+        </div>
+        <div class="table__td">Active</div>
+        <div class="table__td">
+          <app-button [buttonTyped]="data.btnTypeIcon">
+            <app-svg-icon
+              [size]="data.iconSize"
+              [type]="data.threeDots"
+            ></app-svg-icon>
+          </app-button>
+        </div>
+      </div>
+      <div class="table__tr">
+        <div class="table__td">
+          <div class="details">
+            <div class="offline status">
+              <app-svg-icon
+                [size]="data.iconXsSizd"
+                [type]="data.offlineIcon"
+              ></app-svg-icon>
+            </div>
+            <span>Johnny Greame</span>
+          </div>
+        </div>
+        <div class="table__td">abc(at)xyz.com</div>
+        <div class="table__td">
+          <app-badge [badgeStyleColor]="data.badgeStyle">Admin</app-badge>
+        </div>
+        <div class="table__td">Active</div>
+        <div class="table__td">
+          <app-button [buttonTyped]="data.btnTypeIcon">
+            <app-svg-icon
+              [size]="data.iconSize"
+              [type]="data.threeDots"
+            ></app-svg-icon>
+          </app-button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="table__pagination">
+    <div class="paginate">
+      <div class="prev">
+        <app-button [buttonTyped]="data.btnPrimary" [buttonStatus]="true">
+          <app-svg-icon
+            [size]="data.iconSize"
+            [type]="data.arrowLeft"
+          ></app-svg-icon>
+          <span>Prev</span>
+        </app-button>
+      </div>
+      <div class="paginate__buttons">
+        <div class="page active">1</div>
+        <div class="page">2</div>
+        <div class="page">3</div>
+        <div class="page">4</div>
+      </div>
+      <div class="next">
+        <app-button [buttonTyped]="data.btnPrimary" class="iconWhite">
+          <span>Next</span>
+          <app-svg-icon
+            [size]="data.iconSize"
+            [type]="data.arrowRight"
+          ></app-svg-icon>
+        </app-button>
+      </div>
+    </div>
+    <p class="results">Showing 10 of 40</p>
+  </div>
+</div>

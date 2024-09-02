@@ -1,0 +1,75 @@
+app-button {
+  display: contents;
+}
+button {
+  &:disabled {
+    background: #e3e3e3 !important;
+    border-color: #e3e3e3 !important;
+    pointer-events: none;
+    color: #ccc !important;
+  }
+  // General Buttons
+  &.btn {
+    padding: 8px 20px 8px 20px;
+    outline: 0;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    // Primary Button
+    &.btn-primary {
+      background: #040505;
+      border: 1px solid #040505;
+      color: #ffffff;
+      // transition: all 0.3s ease-in;
+
+      &:hover {
+        background: #4f4f4f;
+        transition: all 0.3s ease-out;
+        border-color: #4f4f4f;
+      }
+
+      &:active {
+        background: #040505;
+      }
+    }
+
+    // Secondary Button
+    &.btn-secondary {
+      background: transparent;
+      border: 1px solid #e9e9e9;
+      color: #040505;
+      // transition: all 0.3s ease-in;
+
+      &:hover {
+        background: #f0f0f0;
+        border: 1px solid #7a7878;
+        border-radius: 4px;
+        transition: all 0.3s ease-out;
+      }
+      &:active {
+        background: transparent;
+        border: 1px solid #e9e9e9;
+        color: #040505;
+      }
+    }
+
+    // Icon Button
+    &.btn-icon {
+      background: transparent;
+      border: 0;
+      padding: 0;
+      width: 24px;
+      height: 24px;
+
+      &:hover {
+        background: #eeeeee;
+        transition: all 0.3s ease-out;
+      }
+    }
+  }
+}

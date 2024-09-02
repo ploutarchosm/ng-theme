@@ -1,0 +1,30 @@
+.badge {
+  &__wrapper {
+    display: flex;
+    padding: 0 var(--spacing-xl, 16px);
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-md, 8px);
+    border-radius: 16px;
+
+    span {
+      overflow: hidden;
+      color: #252525;
+      text-overflow: ellipsis;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+    }
+  }
+
+  &__peachyOrange {
+    background: #ffbd81;
+  }
+  &__paleCyan {
+    background: #b7fbff;
+  }
+  &__lightPeriwinkle {
+    background: #d2dfff;
+  }
+}

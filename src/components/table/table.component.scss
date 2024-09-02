@@ -1,0 +1,113 @@
+.table {
+  margin: 20px 0;
+  &__actions {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-md, 8px);
+    &-row {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xl, 16px);
+    }
+  }
+  &__head {
+    border-radius: 4px 4px 0 0;
+    background: var(--nav-Color, #fafafa);
+    border-top: 1px solid var(--border-cool-grey, #e9e9e9);
+    border-left: 1px solid var(--border-cool-grey, #e9e9e9);
+    border-right: 1px solid var(--border-cool-grey, #e9e9e9);
+    background: var(--Nav-Color, #fafafa);
+  }
+  &__body {
+    border-left: 1px solid var(--border-cool-grey, #e9e9e9);
+    border-right: 1px solid var(--border-cool-grey, #e9e9e9);
+    border-radius: 0 0 4px 4px;
+  }
+  &__th,
+  &__td {
+    display: flex;
+    width: 256px;
+    padding: var(--spacing-xl, 16px) 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: var(--spacing-xs, 4px);
+
+    .filter {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .details {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      .status {
+        width: 12px;
+        height: 12px;
+      }
+      .online {
+        fill: #abffae;
+        stroke-width: 2px;
+        stroke: #e3ffe4;
+      }
+      .offline {
+        fill: #d9d9d9;
+        stroke-width: 2px;
+        stroke: #b7b7b7;
+      }
+    }
+    &:first-child {
+      padding: var(--spacing-xl, 16px);
+    }
+  }
+  &__tr {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    border-bottom: 1px solid var(--border-cool-grey, #e9e9e9);
+  }
+  &__pagination {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: var(--spacing-3xl, 24px);
+
+    .paginate {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xl, 16px);
+      flex: 1 0 0;
+      &__buttons {
+        display: flex;
+        align-items: flex-start;
+        gap: 2px;
+
+        .page {
+          display: flex;
+          width: 40px;
+          height: 40px;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          &.active {
+            border-radius: 4px;
+            border: 1px solid var(--Stroke-Cool-Grey, #e9e9e9);
+          }
+        }
+      }
+    }
+
+    p.results {
+      color: var(--cool-Grey, #7a7878);
+      text-align: right;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+    }
+  }
+}
