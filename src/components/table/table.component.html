@@ -6,7 +6,7 @@
           [size]="data.iconSize"
           [type]="data.searchIcon"
         ></app-svg-icon>
-        <input type="text" class="field-input search" placeholder="Search..." />
+        <input type="text" class="field-input search" [formControl]="searchControl" placeholder="Search..." />
       </div>
     </div>
   </div>
@@ -18,295 +18,75 @@
         <div class="table__th">
           <div class="filter">
             <span>Role</span>
-            <app-button [buttonTyped]="data.btnTypeIcon">
+            <app-button [buttonTyped]="data.btnTypeIcon" (click)="toggleRoleDropdown()">
               <app-svg-icon
                 [size]="data.iconSize"
                 [type]="data.filterIcon"
               ></app-svg-icon>
             </app-button>
+            <div class="dropdown" *ngIf="isRoleDropdownOpen">
+              <label for="role-select">Select Role</label>
+              <select id="role-select" [(ngModel)]="role" (change)="getUsersList()">
+                <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+              </select>
+            </div>
           </div>
         </div>
         <div class="table__th">
           <div class="filter">
             <span>Status</span>
-            <app-button [buttonTyped]="data.btnTypeIcon">
+            <app-button [buttonTyped]="data.btnTypeIcon" (click)="toggleStatusDropdown()">
               <app-svg-icon
                 [size]="data.iconSize"
                 [type]="data.filterIcon"
               ></app-svg-icon>
             </app-button>
+            <div class="dropdown" *ngIf="isStatusDropdownOpen">
+              <label for="status-select">Select Status</label>
+              <select id="status-select" [(ngModel)]="status" (change)="getUsersList()">
+                <option *ngFor="let status of statuses" [value]="status">{{ status }}</option>
+              </select>
+            </div>
           </div>
         </div>
         <div class="table__th">Details</div>
       </div>
     </div>
     <div class="table__body">
-      <div class="table__tr">
-        <div class="table__td">
-          <div class="details">
-            <div class="online status">
-              <app-svg-icon
-                [size]="data.iconXsSizd"
-                [type]="data.onlineIcon"
-              ></app-svg-icon>
+      @for (user of usersList?.data; track $index) {
+        <div class="table__tr">
+          <div class="table__td">
+            <div class="details">
+              <div class="status" [ngClass]="{'online': user.status === USER_STATUSES.ACTIVE, 'offline': user.status === USER_STATUSES.INACTIVE }">
+                <app-svg-icon
+                  [size]="data.iconXsSizd"
+                  [type]="data.onlineIcon"
+                ></app-svg-icon>
+              </div>
+              <span>{{user.first_name}} {{user.last_name}}</span>
             </div>
-            <span>Johnny Greame</span>
+          </div>
+          <div class="table__td">{{user.email}}</div>
+          <div class="table__td">
+            <app-badge [badgeStyleColor]="data.badgeStyle">{{user.role}}</app-badge>
+          </div>
+          <div class="table__td">{{user.status}}</div>
+          <div class="table__td">
+            <app-button [buttonTyped]="data.btnTypeIcon">
+              <app-svg-icon
+                [size]="data.iconSize"
+                [type]="data.threeDots"
+              ></app-svg-icon>
+            </app-button>
           </div>
         </div>
-        <div class="table__td">abc(at)xyz.com</div>
-        <div class="table__td">
-          <app-badge [badgeStyleColor]="data.badgeStyle">Admin</app-badge>
-        </div>
-        <div class="table__td">Active</div>
-        <div class="table__td">
-          <app-button [buttonTyped]="data.btnTypeIcon">
-            <app-svg-icon
-              [size]="data.iconSize"
-              [type]="data.threeDots"
-            ></app-svg-icon>
-          </app-button>
-        </div>
-      </div>
-      <div class="table__tr">
-        <div class="table__td">
-          <div class="details">
-            <div class="online status">
-              <app-svg-icon
-                [size]="data.iconXsSizd"
-                [type]="data.onlineIcon"
-              ></app-svg-icon>
-            </div>
-            <span>Johnny Greame</span>
-          </div>
-        </div>
-        <div class="table__td">abc(at)xyz.com</div>
-        <div class="table__td">
-          <app-badge [badgeStyleColor]="data.badgeStyle2">Owner</app-badge>
-        </div>
-        <div class="table__td">Active</div>
-        <div class="table__td">
-          <app-button [buttonTyped]="data.btnTypeIcon">
-            <app-svg-icon
-              [size]="data.iconSize"
-              [type]="data.threeDots"
-            ></app-svg-icon>
-          </app-button>
-        </div>
-      </div>
-      <div class="table__tr">
-        <div class="table__td">
-          <div class="details">
-            <div class="offline status">
-              <app-svg-icon
-                [size]="data.iconXsSizd"
-                [type]="data.offlineIcon"
-              ></app-svg-icon>
-            </div>
-            <span>Johnny Greame</span>
-          </div>
-        </div>
-        <div class="table__td">abc(at)xyz.com</div>
-        <div class="table__td">
-          <app-badge [badgeStyleColor]="data.badgeStyle3">Dev</app-badge>
-        </div>
-        <div class="table__td">Active</div>
-        <div class="table__td">
-          <app-button [buttonTyped]="data.btnTypeIcon">
-            <app-svg-icon
-              [size]="data.iconSize"
-              [type]="data.threeDots"
-            ></app-svg-icon>
-          </app-button>
-        </div>
-      </div>
-      <div class="table__tr">
-        <div class="table__td">
-          <div class="details">
-            <div class="offline status">
-              <app-svg-icon
-                [size]="data.iconXsSizd"
-                [type]="data.offlineIcon"
-              ></app-svg-icon>
-            </div>
-            <span>Johnny Greame</span>
-          </div>
-        </div>
-        <div class="table__td">abc(at)xyz.com</div>
-        <div class="table__td">
-          <app-badge [badgeStyleColor]="data.badgeStyle3">Dev</app-badge>
-        </div>
-        <div class="table__td">Active</div>
-        <div class="table__td">
-          <app-button [buttonTyped]="data.btnTypeIcon">
-            <app-svg-icon
-              [size]="data.iconSize"
-              [type]="data.threeDots"
-            ></app-svg-icon>
-          </app-button>
-        </div>
-      </div>
-      <div class="table__tr">
-        <div class="table__td">
-          <div class="details">
-            <div class="offline status">
-              <app-svg-icon
-                [size]="data.iconXsSizd"
-                [type]="data.offlineIcon"
-              ></app-svg-icon>
-            </div>
-            <span>Johnny Greame</span>
-          </div>
-        </div>
-        <div class="table__td">abc(at)xyz.com</div>
-        <div class="table__td">
-          <app-badge [badgeStyleColor]="data.badgeStyle3">Dev</app-badge>
-        </div>
-        <div class="table__td">Active</div>
-        <div class="table__td">
-          <app-button [buttonTyped]="data.btnTypeIcon">
-            <app-svg-icon
-              [size]="data.iconSize"
-              [type]="data.threeDots"
-            ></app-svg-icon>
-          </app-button>
-        </div>
-      </div>
-      <div class="table__tr">
-        <div class="table__td">
-          <div class="details">
-            <div class="offline status">
-              <app-svg-icon
-                [size]="data.iconXsSizd"
-                [type]="data.offlineIcon"
-              ></app-svg-icon>
-            </div>
-            <span>Johnny Greame</span>
-          </div>
-        </div>
-        <div class="table__td">abc(at)xyz.com</div>
-        <div class="table__td">
-          <app-badge [badgeStyleColor]="data.badgeStyle3">Dev</app-badge>
-        </div>
-        <div class="table__td">Active</div>
-        <div class="table__td">
-          <app-button [buttonTyped]="data.btnTypeIcon">
-            <app-svg-icon
-              [size]="data.iconSize"
-              [type]="data.threeDots"
-            ></app-svg-icon>
-          </app-button>
-        </div>
-      </div>
-      <div class="table__tr">
-        <div class="table__td">
-          <div class="details">
-            <div class="online status">
-              <app-svg-icon
-                [size]="data.iconXsSizd"
-                [type]="data.onlineIcon"
-              ></app-svg-icon>
-            </div>
-            <span>Johnny Greame</span>
-          </div>
-        </div>
-        <div class="table__td">abc(at)xyz.com</div>
-        <div class="table__td">
-          <app-badge [badgeStyleColor]="data.badgeStyle">Admin</app-badge>
-        </div>
-        <div class="table__td">Active</div>
-        <div class="table__td">
-          <app-button [buttonTyped]="data.btnTypeIcon">
-            <app-svg-icon
-              [size]="data.iconSize"
-              [type]="data.threeDots"
-            ></app-svg-icon>
-          </app-button>
-        </div>
-      </div>
-      <div class="table__tr">
-        <div class="table__td">
-          <div class="details">
-            <div class="offline status">
-              <app-svg-icon
-                [size]="data.iconXsSizd"
-                [type]="data.offlineIcon"
-              ></app-svg-icon>
-            </div>
-            <span>Johnny Greame</span>
-          </div>
-        </div>
-        <div class="table__td">abc(at)xyz.com</div>
-        <div class="table__td">
-          <app-badge [badgeStyleColor]="data.badgeStyle3">Dev</app-badge>
-        </div>
-        <div class="table__td">Active</div>
-        <div class="table__td">
-          <app-button [buttonTyped]="data.btnTypeIcon">
-            <app-svg-icon
-              [size]="data.iconSize"
-              [type]="data.threeDots"
-            ></app-svg-icon>
-          </app-button>
-        </div>
-      </div>
-      <div class="table__tr">
-        <div class="table__td">
-          <div class="details">
-            <div class="offline status">
-              <app-svg-icon
-                [size]="data.iconXsSizd"
-                [type]="data.offlineIcon"
-              ></app-svg-icon>
-            </div>
-            <span>Johnny Greame</span>
-          </div>
-        </div>
-        <div class="table__td">abc(at)xyz.com</div>
-        <div class="table__td">
-          <app-badge [badgeStyleColor]="data.badgeStyle3">Dev</app-badge>
-        </div>
-        <div class="table__td">Active</div>
-        <div class="table__td">
-          <app-button [buttonTyped]="data.btnTypeIcon">
-            <app-svg-icon
-              [size]="data.iconSize"
-              [type]="data.threeDots"
-            ></app-svg-icon>
-          </app-button>
-        </div>
-      </div>
-      <div class="table__tr">
-        <div class="table__td">
-          <div class="details">
-            <div class="offline status">
-              <app-svg-icon
-                [size]="data.iconXsSizd"
-                [type]="data.offlineIcon"
-              ></app-svg-icon>
-            </div>
-            <span>Johnny Greame</span>
-          </div>
-        </div>
-        <div class="table__td">abc(at)xyz.com</div>
-        <div class="table__td">
-          <app-badge [badgeStyleColor]="data.badgeStyle">Admin</app-badge>
-        </div>
-        <div class="table__td">Active</div>
-        <div class="table__td">
-          <app-button [buttonTyped]="data.btnTypeIcon">
-            <app-svg-icon
-              [size]="data.iconSize"
-              [type]="data.threeDots"
-            ></app-svg-icon>
-          </app-button>
-        </div>
-      </div>
+      }
     </div>
   </div>
   <div class="table__pagination">
     <div class="paginate">
       <div class="prev">
-        <app-button [buttonTyped]="data.btnPrimary" [buttonStatus]="true">
+        <app-button [buttonTyped]="data.btnPrimary" (click)="goToPreviousPage()" [buttonStatus]="prevBtnStatus">
           <app-svg-icon
             [size]="data.iconSize"
             [type]="data.arrowLeft"
@@ -315,13 +95,18 @@
         </app-button>
       </div>
       <div class="paginate__buttons">
-        <div class="page active">1</div>
-        <div class="page">2</div>
-        <div class="page">3</div>
-        <div class="page">4</div>
+        @for (page of pages; track $index) {
+          <div
+            class="page"
+            [class.active]="page === currentPage"
+            (click)="goToPage(page)"
+          >
+            {{ page }}
+          </div>
+        }
       </div>
       <div class="next">
-        <app-button [buttonTyped]="data.btnPrimary" class="iconWhite">
+        <app-button [buttonTyped]="data.btnPrimary" (click)="goToNextPage()" [buttonStatus]="nextBtnStatus">
           <span>Next</span>
           <app-svg-icon
             [size]="data.iconSize"
@@ -330,6 +115,6 @@
         </app-button>
       </div>
     </div>
-    <p class="results">Showing 10 of 40</p>
+    <p class="results">Showing {{usersList.data.length}} of {{usersList.total}}</p>
   </div>
 </div>
